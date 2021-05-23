@@ -1,0 +1,263 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>A member LIST .. What do we speculate the price will be this summer JOIN IN </title>
+
+    <style type="text/css">
+        body {
+            background-color: #E5E5E8;
+            margin: 0px;
+            padding: 12px 30px 4px 30px;
+            font: 13px verdana, helvetica, sans-serif;
+            text-align: center;
+            font-size: 30px;
+        }
+        input[type=button]{
+            font-size: 30px;
+        }
+
+        .timestamp{
+            font-size: 15px;
+        }
+        .members{
+            font-size: 20px;
+            text-align: center;
+        }
+</style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script lang="javascript">
+        var pList = [15000 , 22588 ,24472 ,25671 ,27500 ,30999 ,31000 ,31450 ,32500 ,33333 ,34400 ,34600 ,35210 ,36101 ,37500 ,37777 ,38500 ,38677 ,39348 ,39765 ,40000 ,40200 ,41000 ,41386 ,41800 ,42108 ,42761 ,42777 ,42836 ,43000 ,43231 ,43285 ,43333 ,43568 ,43579 ,44041 ,44290 ,44325 ,44444 ,44700 ,45000 ,45300 ,45700 ,46123 ,46170 ,46640 ,47200 ,47750 ,47834 ,48021 ,48377 ,48520 ,48777 ,48779 ,49037 ,49240 ,49500 ,50000 ,50311 ,50823 ,51101 ,51333 ,51356 ,51770 ,51952 ,52000 ,52300 ,52356 ,52469 ,52520 ,52804 ,53082 ,53210 ,53333 ,53458 ,54000 ,54700 ,54890 ,55000 ,55200 ,55280 ,55343 ,55500 ,55600 ,56000 ,56056 ,56200 ,56230 ,56321 ,56458 ,56555 ,56700 ,56840 ,56889 ,57089 ,57333 ,57452 ,57775 ,58133 ,58193 ,58222 ,58500 ,58820 ,58888 ,59000 ,59250 ,59400 ,59804 ,59829 ,60000 ,60062 ,60424 ,61015 ,61409 ,61540 ,61652 ,61767 ,62220 ,62500 ,62670 ,62800 ,63800 ,63999 ,64321 ,64650 ,64974 ,65000 ,65100 ,65222 ,65432 ,65847 ,66000 ,66666 ,67000 ,67500 ,67937 ,68000 ,68077 ,68250 ,68500 ,69100 ,69420 ,69690 ,69820 ,70000 ,70500 ,71500 ,72239 ,72400 ,72555 ,72744 ,73155 ,73834 ,74266 ,74800 ,75800 ,76543 ,77000 ,77500 ,77777 ,81777 ,84200 ,84220 ,86839 ,87220 ,87500 ,89175 ,89898 ,100000];
+        var mList = ['Royse777','Buchi-88','proudhon','Heisenberg_Hunter*','Betwrong*','sbogovac*','maxreish','Koal-84','1miau*','sgbett','Smartprofit','y2j89','paxmao','TravelMug*','heslo*','roycilik','Leviathan.007','XEOP$','Parazyd','Rizzrack','Marvelman','haloxon','JanEmil','bitcoincidence','Spaceman_Spiff_Original*','Rikafip','soliton','Unknown01','ReiMomo*','HeRetiK*','xenon131','decodx','xyz','Furious 7','lcharles123*','roosbit*','morvillz7z','Souri','BTCLiz','Danydee','seoincorporation*','Stalker22','Silber','UserU','bct_ail','sabotag3x*','Biodom*','Biro Bob','Mahdirakib*','Wekkel','xandry','Elwar*','theymos*','casperBGD','Lucasgabd','joker_josue*','sheenshane*','Charles-Tim*','frmracc','janggernaut*','d5000*','teeGUMES*','klarki*','bakasabo*','mole0815*','LoyceV','HairyMaclairy','hanspeter77','acroman08','Woodie*','bullrun2020bro','ETFbitcoin','bitmover*','icopress*','malevolent*','brokedummy','MoparMiningLLC*','bL4nkcode','bitebits*','Lakai01','alegotardo*','meanwords*','jojo69','-Lemming-','Xal0lex','TopTort777','Arriemoller','Oasisman*','lienfaye*','Real-Duke','Dadan','dothebeats*','Altryist','Andrey123','galeriademodacom','rhomelmabini*','weetious','Captain-Cryptory','Haunebu*','Ratimov*','sirazimuth','LFC_Bitcoin*','kurious*','creep_o','A-Bolt','Krubster*','btc78','bitbollo','gabbie2010*','vapourminer','cryptofrka','shahzadafzal*','julerz12','Raflesia*','Iced','epis11','DdmrDdmr*','Mbitr','dextronomous','Rent_a_Ray','peter0425*','DeathAngel*','MinoRaiola','smartcomet','hosseinimr93','willi9974*','AlcoHoDL','tokeweed','NeuroticFish','o_e_l_e_o','Dabs','cygan*','soullyG','bitserve*','BitcoinBunny','krogoth','2stout','famososMuertos*','-doubleU-','Poker Player*','AFox','SatsLife*','ChinkyEyes','MishaMuc','philipma1957','Slot Kid','fillippone','cAPSLOCK*','Phil_S','OutOfMemory','IntroVert','d_eddie*','seek3r','ice18','psycodad','friends1980*','Sathyr','ovcijisir*','Paashaas','JimboToronto','ivomm*','LUCKMCFLY*','JohnBitCo*','slaveforanunnak1','bitcoinPsycho*','$crypto$*','Yabes','Farmer Bill*','somac.'];
+        $(function () {
+
+            $.get("https://www.bitstamp.net/api/v2/ticker/btcusd", function (data) {
+
+                if(data != null ){
+                    var price = Math.round(data.last);
+                    $(".dresult").html(price);
+                    $(".tresult").val(price);                    
+
+                    findWinner(price);
+
+                    var s = new Date(data.timestamp*1000).toLocaleString("en-US");
+                    $(".timestamp").html(s);
+                }
+                else{                   
+                    $(".dresult").html(data);
+                    $(".tresult").val(data);
+                } 
+            
+            });
+        });
+
+        function findWinner(price){
+            var winner = null;
+            var id =-1;
+            $.each(pList, function(index){
+                if (winner == null || Math.abs(this - price) < Math.abs(winner - price)) {
+                    winner = this;
+                    id=index;
+                }
+            });
+
+            $('.winner').html(mList[id]);
+         
+            $('.members').find('tr').eq(id).css('background-color','yellow');
+        }
+    </script>
+</head>
+
+<body>
+
+    <a href="https://bitcointalk.org/index.php?topic=5337266.0" target="_blank">A member LIST .. What do we speculate the price will be this summer JOIN IN</a>
+<br/><br/>
+    Current BTC Price in USD: $<span class="dresult">
+        <img height="20" src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif" />
+    </span>  &nbsp;&nbsp;&nbsp;&nbsp; <input type="button" value="Refresh" onClick="window.location.href=window.location.href">
+    <br>
+    <span class="timestamp"></span>
+    <br/><br/>
+    WINNER is :   <span class="winner" style="background-color: yellow;"><img height="20" src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif" /></span>
+    <br/><br/>
+    <div style="display: none;">
+        Current BTC Price in USD: <input type="text" class="tresult"></input>
+    </div>
+    ~*~*~*~*~*~* Final List *~*~*~*~*~*~
+    <table class="members" align="center">
+        <tr><td class="price">15,000  </td><td>Royse777					</td></tr>
+        <tr><td class="price">22,588  </td><td>Buchi-88                   </td></tr>
+        <tr><td class="price">24,472  </td><td>proudhon                   </td></tr>
+        <tr><td class="price">25,671  </td><td>Heisenberg_Hunter*         </td></tr>
+        <tr><td class="price">27,500  </td><td>Betwrong*                  </td></tr>
+        <tr><td class="price">30,999  </td><td>sbogovac*                  </td></tr>
+        <tr><td class="price">31,000  </td><td>maxreish                   </td></tr>
+        <tr><td class="price">31,450  </td><td>Koal-84                    </td></tr>
+        <tr><td class="price">32,500  </td><td>1miau*                     </td></tr>
+        <tr><td class="price">33,333  </td><td>sgbett                     </td></tr>
+        <tr><td class="price">34,400  </td><td>Smartprofit                </td></tr>
+        <tr><td class="price">34,600  </td><td>y2j89                      </td></tr>
+        <tr><td class="price">35,210  </td><td>paxmao                     </td></tr>
+        <tr><td class="price">36,101  </td><td>TravelMug*                 </td></tr>
+        <tr><td class="price">37,500  </td><td>heslo*                     </td></tr>
+        <tr><td class="price">37,777  </td><td>roycilik                   </td></tr>
+        <tr><td class="price">38,500  </td><td>Leviathan.007              </td></tr>
+        <tr><td class="price">38,677  </td><td>XEOP$                      </td></tr>
+        <tr><td class="price">39,348  </td><td>Parazyd                    </td></tr>
+        <tr><td class="price">39,765  </td><td>Rizzrack                   </td></tr>
+        <tr><td class="price">40,000  </td><td>Marvelman                  </td></tr>
+        <tr><td class="price">40,200  </td><td>haloxon                    </td></tr>
+        <tr><td class="price">41,000  </td><td>JanEmil                    </td></tr>
+        <tr><td class="price">41,386  </td><td>bitcoincidence             </td></tr>
+        <tr><td class="price">41,800  </td><td>Spaceman_Spiff_Original*   </td></tr>
+        <tr><td class="price">42,108  </td><td>Rikafip                    </td></tr>
+        <tr><td class="price">42,761  </td><td>soliton                    </td></tr>
+        <tr><td class="price">42,777  </td><td>Unknown01                  </td></tr>
+        <tr><td class="price">42,836  </td><td>ReiMomo*                   </td></tr>
+        <tr><td class="price">43,000  </td><td>HeRetiK*                   </td></tr>
+        <tr><td class="price">43,231  </td><td>xenon131                   </td></tr>
+        <tr><td class="price">43,285  </td><td>decodx                     </td></tr>
+        <tr><td class="price">43,333  </td><td>xyz                        </td></tr>
+        <tr><td class="price">43,568  </td><td>Furious 7                  </td></tr>
+        <tr><td class="price">43,579  </td><td>lcharles123*               </td></tr>
+        <tr><td class="price">44,041  </td><td>roosbit*                   </td></tr>
+        <tr><td class="price">44,290  </td><td>morvillz7z                 </td></tr>
+        <tr><td class="price">44,325  </td><td>Souri                      </td></tr>
+        <tr><td class="price">44,444  </td><td>BTCLiz                     </td></tr>
+        <tr><td class="price">44,700  </td><td>Danydee                    </td></tr>
+        <tr><td class="price">45,000  </td><td>seoincorporation*          </td></tr>
+        <tr><td class="price">45,300  </td><td>Stalker22                  </td></tr>
+        <tr><td class="price">45,700  </td><td>Silber                     </td></tr>
+        <tr><td class="price">46,123  </td><td>UserU                      </td></tr>
+        <tr><td class="price">46,170  </td><td>bct_ail                    </td></tr>
+        <tr><td class="price">46,640  </td><td>sabotag3x*                 </td></tr>
+        <tr><td class="price">47,200  </td><td>Biodom*                    </td></tr>
+        <tr><td class="price">47,750  </td><td>Biro Bob                   </td></tr>
+        <tr><td class="price">47,834  </td><td>Mahdirakib*                </td></tr>
+        <tr><td class="price">48,021  </td><td>Wekkel                     </td></tr>
+        <tr><td class="price">48,377  </td><td>xandry                     </td></tr>
+        <tr><td class="price">48,520  </td><td>Elwar*                     </td></tr>
+        <tr><td class="price">48,777  </td><td>theymos*                   </td></tr>
+        <tr><td class="price">48,779  </td><td>casperBGD                  </td></tr>
+        <tr><td class="price">49,037  </td><td>Lucasgabd                  </td></tr>
+        <tr><td class="price">49,240  </td><td>joker_josue*               </td></tr>
+        <tr><td class="price">49,500  </td><td>sheenshane*                </td></tr>
+        <tr><td class="price">50,000  </td><td>Charles-Tim*               </td></tr>
+        <tr><td class="price">50,311  </td><td>frmracc                    </td></tr>
+        <tr><td class="price">50,823  </td><td>janggernaut*               </td></tr>
+        <tr><td class="price">51,101  </td><td>d5000*                     </td></tr>
+        <tr><td class="price">51,333  </td><td>teeGUMES*                  </td></tr>
+        <tr><td class="price">51,356  </td><td>klarki*                    </td></tr>
+        <tr><td class="price">51,770  </td><td>bakasabo*                  </td></tr>
+        <tr><td class="price">51,952  </td><td>mole0815*                  </td></tr>
+        <tr><td class="price">52,000  </td><td>LoyceV                     </td></tr>
+        <tr><td class="price">52,300  </td><td>HairyMaclairy              </td></tr>
+        <tr><td class="price">52,356  </td><td>hanspeter77                </td></tr>
+        <tr><td class="price">52,469  </td><td>acroman08                  </td></tr>
+        <tr><td class="price">52,520  </td><td>Woodie*                    </td></tr>
+        <tr><td class="price">52,804  </td><td>bullrun2020bro             </td></tr>
+        <tr><td class="price">53,082  </td><td>ETFbitcoin      			</td></tr>
+        <tr><td class="price">53,210  </td><td>bitmover*                  </td></tr>
+        <tr><td class="price">53,333  </td><td>icopress*                  </td></tr>
+        <tr><td class="price">53,458  </td><td>malevolent*       			</td></tr>
+        <tr><td class="price">54,000  </td><td>brokedummy                 </td></tr>
+        <tr><td class="price">54,700  </td><td>MoparMiningLLC*            </td></tr>
+        <tr><td class="price">54,890  </td><td>bL4nkcode                  </td></tr>
+        <tr><td class="price">55,000  </td><td>bitebits*                  </td></tr>
+        <tr><td class="price">55,200  </td><td>Lakai01                    </td></tr>
+        <tr><td class="price">55,280  </td><td>alegotardo*                </td></tr>
+        <tr><td class="price">55,343  </td><td>meanwords*                 </td></tr>
+        <tr><td class="price">55,500  </td><td>jojo69                     </td></tr>
+        <tr><td class="price">55,600  </td><td>-Lemming-                  </td></tr>
+        <tr><td class="price">56,000  </td><td>Xal0lex                    </td></tr>
+        <tr><td class="price">56,056  </td><td>TopTort777                 </td></tr>
+        <tr><td class="price">56,200  </td><td>Arriemoller                </td></tr>
+        <tr><td class="price">56,230  </td><td>Oasisman*                  </td></tr>
+        <tr><td class="price">56,321  </td><td>lienfaye*                  </td></tr>
+        <tr><td class="price">56,458  </td><td>Real-Duke                  </td></tr>
+        <tr><td class="price">56,555  </td><td>Dadan                      </td></tr>
+        <tr><td class="price">56,700  </td><td>dothebeats*                </td></tr>
+        <tr><td class="price">56,840  </td><td>Altryist                   </td></tr>
+        <tr><td class="price">56,889  </td><td>Andrey123                  </td></tr>
+        <tr><td class="price">57,089  </td><td>galeriademodacom           </td></tr>
+        <tr><td class="price">57,333  </td><td>rhomelmabini*              </td></tr>
+        <tr><td class="price">57,452  </td><td>weetious                   </td></tr>
+        <tr><td class="price">57,775  </td><td>Captain-Cryptory           </td></tr>
+        <tr><td class="price">58,133  </td><td>Haunebu*                   </td></tr>
+        <tr><td class="price">58,193  </td><td>Ratimov*                   </td></tr>
+        <tr><td class="price">58,222  </td><td>sirazimuth                 </td></tr>
+        <tr><td class="price">58,500  </td><td>LFC_Bitcoin*               </td></tr>
+        <tr><td class="price">58,820  </td><td>kurious*                   </td></tr>
+        <tr><td class="price">58,888  </td><td>creep_o                    </td></tr>
+        <tr><td class="price">59,000  </td><td>A-Bolt                     </td></tr>
+        <tr><td class="price">59,250  </td><td>Krubster*                  </td></tr>
+        <tr><td class="price">59,400  </td><td>btc78                      </td></tr>
+        <tr><td class="price">59,804  </td><td>bitbollo                   </td></tr>
+        <tr><td class="price">59,829  </td><td>gabbie2010*                </td></tr>
+        <tr><td class="price">60,000  </td><td>vapourminer                </td></tr>
+        <tr><td class="price">60,062  </td><td>cryptofrka                 </td></tr>
+        <tr><td class="price">60,424  </td><td>shahzadafzal*              </td></tr>
+        <tr><td class="price">61,015  </td><td>julerz12                   </td></tr>
+        <tr><td class="price">61,409  </td><td>Raflesia*                  </td></tr>
+        <tr><td class="price">61,540  </td><td>Iced                       </td></tr>
+        <tr><td class="price">61,652  </td><td>epis11                     </td></tr>
+        <tr><td class="price">61,767  </td><td>DdmrDdmr*                  </td></tr>
+        <tr><td class="price">62,220  </td><td>Mbitr                      </td></tr>
+        <tr><td class="price">62,500  </td><td>dextronomous               </td></tr>
+        <tr><td class="price">62,670  </td><td>Rent_a_Ray                 </td></tr>
+        <tr><td class="price">62,800  </td><td>peter0425*                 </td></tr>
+        <tr><td class="price">63,800  </td><td>DeathAngel*                </td></tr>
+        <tr><td class="price">63,999  </td><td>MinoRaiola                 </td></tr>
+        <tr><td class="price">64,321  </td><td>smartcomet                 </td></tr>
+        <tr><td class="price">64,650  </td><td>hosseinimr93               </td></tr>
+        <tr><td class="price">64,974  </td><td>willi9974*                 </td></tr>
+        <tr><td class="price">65,000  </td><td>AlcoHoDL                   </td></tr>
+        <tr><td class="price">65,100  </td><td>tokeweed                   </td></tr>
+        <tr><td class="price">65,222  </td><td>NeuroticFish               </td></tr>
+        <tr><td class="price">65,432  </td><td>o_e_l_e_o                  </td></tr>
+        <tr><td class="price">65,847  </td><td>Dabs                       </td></tr>
+        <tr><td class="price">66,000  </td><td>cygan*                     </td></tr>
+        <tr><td class="price">66,666  </td><td>soullyG                    </td></tr>
+        <tr><td class="price">67,000  </td><td>bitserve*                  </td></tr>
+        <tr><td class="price">67,500  </td><td>BitcoinBunny               </td></tr>
+        <tr><td class="price">67,937  </td><td>krogoth                    </td></tr>
+        <tr><td class="price">68,000  </td><td>2stout                     </td></tr>
+        <tr><td class="price">68,077  </td><td>famososMuertos*            </td></tr>
+        <tr><td class="price">68,250  </td><td>-doubleU-                  </td></tr>
+        <tr><td class="price">68,500  </td><td>Poker Player*              </td></tr>
+        <tr><td class="price">69,100  </td><td>AFox                       </td></tr>
+        <tr><td class="price">69,420  </td><td>SatsLife*                  </td></tr>
+        <tr><td class="price">69,690  </td><td>ChinkyEyes                 </td></tr>
+        <tr><td class="price">69,820  </td><td>MishaMuc                   </td></tr>
+        <tr><td class="price">70,000  </td><td>philipma1957               </td></tr>
+        <tr><td class="price">70,500  </td><td>Slot Kid                   </td></tr>
+        <tr><td class="price">71,500  </td><td>fillippone                 </td></tr>
+        <tr><td class="price">72,239  </td><td>cAPSLOCK*                  </td></tr>
+        <tr><td class="price">72,400  </td><td>Phil_S                     </td></tr>
+        <tr><td class="price">72,555  </td><td>OutOfMemory                </td></tr>
+        <tr><td class="price">72,744  </td><td>IntroVert                  </td></tr>
+        <tr><td class="price">73,155  </td><td>d_eddie*                   </td></tr>
+        <tr><td class="price">73,834  </td><td>seek3r                     </td></tr>
+        <tr><td class="price">74,266  </td><td>ice18                      </td></tr>
+        <tr><td class="price">74,800  </td><td>psycodad                   </td></tr>
+        <tr><td class="price">75,800  </td><td>friends1980*               </td></tr>
+        <tr><td class="price">76,543  </td><td>Sathyr                     </td></tr>
+        <tr><td class="price">77,000  </td><td>ovcijisir*                 </td></tr>
+        <tr><td class="price">77,500  </td><td>Paashaas                   </td></tr>
+        <tr><td class="price">77,777  </td><td>JimboToronto               </td></tr>
+        <tr><td class="price">81,777  </td><td>ivomm*                     </td></tr>
+        <tr><td class="price">84,200  </td><td>LUCKMCFLY*                 </td></tr>
+        <tr><td class="price">84,220  </td><td>JohnBitCo*                 </td></tr>
+        <tr><td class="price">86,839  </td><td>slaveforanunnak1           </td></tr>
+        <tr><td class="price">87,220  </td><td>bitcoinPsycho*             </td></tr>
+        <tr><td class="price">87,500  </td><td>$crypto$*                  </td></tr>
+        <tr><td class="price">89,175  </td><td>Yabes                      </td></tr>
+        <tr><td class="price">89,898  </td><td>Farmer Bill*               </td></tr>
+        <tr><td class="price">100,000 </td><td>somac.                     </td></tr>
+        
+        </table>
+</body>
+
+</html>
