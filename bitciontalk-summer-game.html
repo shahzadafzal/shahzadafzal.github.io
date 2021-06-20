@@ -1,8 +1,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <title>A member LIST .. What do we speculate the price will be this summer JOIN IN </title>
-
+    <title>Bitciontalk - A member LIST .. What do we speculate the price will be this summer JOIN IN </title>
+    
     <style type="text/css">
         body {
             background-color: #E5E5E8;
@@ -36,6 +36,11 @@
             position: absolute;
             margin-left: 10px;
         }
+
+        #confetti-canvas{
+            top: 0;
+            position: absolute;
+        }
 </style>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -47,6 +52,9 @@
         var isLoaded = false;
         $(function () {
 
+            var price = Math.round(35524);
+
+            /*
             $.get("https://www.bitstamp.net/api/v2/ticker/btcusd", function (data) {
 
                 if(data != null ){
@@ -54,7 +62,8 @@
                     $(".dresult").html(price);
                     $(".tresult").val(price);                    
 
-                    findWinner(price);
+                    //findWinner(price);
+                    //findWinner(56356);
 
                     var s = new Date(data.timestamp*1000).toLocaleString("en-US",{timeZone: 'Europe/Berlin'});
                     //s= convertTZ(s, "Europe/Berlin") // current date-time in jakarta.
@@ -71,6 +80,14 @@
                 } 
             
             });
+            */            
+
+            $(".timestamp").html('6/21/2021, 00:00:00 AM  (CET) ');
+            
+            findWinner(price);
+            $(".dresult").html(price);
+            $(".tresult").val(price);
+            startConfetti();
         });
 
         function findWinner(price){
@@ -85,12 +102,13 @@
 
             $('.winner').html(mList[id]);
          
-            $('.members').find('tr').eq(id).css('background-color','yellow');
+            $('.members').find('tr').eq(id).css('background-color','yellow');            
         }
+        
 
-       setTimeout(function() {
-            if(!isLoaded) window.location.href=window.location.href;
-        }, 2500);
+       //setTimeout(function() {
+       //     if(!isLoaded) window.location.href=window.location.href;
+       // }, 2500);
 
     </script>
 </head>
@@ -99,10 +117,9 @@
 
     <a href="https://bitcointalk.org/index.php?topic=5337266.0" target="_blank">A member LIST .. What do we speculate the price will be this summer JOIN IN</a>
 <br/><br/>
-    Current BTC Price in USD: $<span class="dresult">
+    Final BTC Price in USD: $<span class="dresult">        
         <img height="20" src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif" />
-    </span>  &nbsp;&nbsp;&nbsp;&nbsp; <input type="button" value="Refresh" onClick="window.location.href=window.location.href"> 
-    
+    </span>  &nbsp;&nbsp;&nbsp;&nbsp; <input type="button" value="Refresh" onClick="window.location.href=window.location.href">     
     <span class="timer">
         <span style="font-size: 10px;">Winner will be selected on 21 Jun 2021 00:00 CET</span><br>
         <span id="demo" ></span>
@@ -113,10 +130,11 @@
     <span style="font-size: 10px;">Source: https://www.bitstamp.net/api/v2/ticker/btcusd</span>
     <br/><br/>
     WINNER is :   <span class="winner" style="background-color: yellow;"><img height="20" src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif" /></span>
-    <br/><br/>
     <div style="display: none;">
-        Current BTC Price in USD: <input type="text" class="tresult"></input>
+        <br/><br/><span>BTC Winning Price: $12345</span>
     </div>
+    <br/><br/>
+    
     ~*~*~*~*~*~* Final List *~*~*~*~*~*~
     <table class="members" align="center">
         <tr><td class="price">15,000  </td><td>Royse777					</td></tr>
@@ -353,6 +371,25 @@ function convertTZ(date, tzString) {
     return new Date((typeof date === "string" ? new Date(date) : date).toLocaleString("en-US", {timeZone: tzString}));   
 }
 
+</script>
+
+<script>
+    var maxParticleCount=150;var particleSpeed=2;var startConfetti;var stopConfetti;var toggleConfetti;var removeConfetti;(function(){startConfetti=startConfettiInner;stopConfetti=stopConfettiInner;toggleConfetti=toggleConfettiInner;removeConfetti=removeConfettiInner;var colors=["DodgerBlue","OliveDrab","Gold","Pink","SlateBlue","LightBlue","Violet","PaleGreen","SteelBlue","SandyBrown","Chocolate","Crimson"]
+var streamingConfetti=false;var animationTimer=null;var particles=[];var waveAngle=0;function resetParticle(particle,width,height){particle.color=colors[(Math.random()*colors.length)|0];particle.x=Math.random()*width;particle.y=Math.random()*height-height;particle.diameter=Math.random()*10+5;particle.tilt=Math.random()*10-10;particle.tiltAngleIncrement=Math.random()*0.07+0.05;particle.tiltAngle=0;return particle;}
+function startConfettiInner(){var width=window.innerWidth;var height=window.innerHeight;window.requestAnimFrame=(function(){return window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(callback){return window.setTimeout(callback,16.6666667);};})();var canvas=document.getElementById("confetti-canvas");if(canvas===null){canvas=document.createElement("canvas");canvas.setAttribute("id","confetti-canvas");canvas.setAttribute("style","display:block;z-index:999999;pointer-events:none");document.body.appendChild(canvas);canvas.width=width;canvas.height=height;window.addEventListener("resize",function(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;},true);}
+var context=canvas.getContext("2d");while(particles.length<maxParticleCount)
+particles.push(resetParticle({},width,height));streamingConfetti=true;if(animationTimer===null){(function runAnimation(){context.clearRect(0,0,window.innerWidth,window.innerHeight);if(particles.length===0)
+animationTimer=null;else{updateParticles();drawParticles(context);animationTimer=requestAnimFrame(runAnimation);}})();}}
+function stopConfettiInner(){streamingConfetti=false;}
+function removeConfettiInner(){stopConfetti();particles=[];}
+function toggleConfettiInner(){if(streamingConfetti)
+stopConfettiInner();else
+startConfettiInner();}
+function drawParticles(context){var particle;var x;for(var i=0;i<particles.length;i++){particle=particles[i];context.beginPath();context.lineWidth=particle.diameter;context.strokeStyle=particle.color;x=particle.x+particle.tilt;context.moveTo(x+particle.diameter/2,particle.y);context.lineTo(x,particle.y+particle.tilt+particle.diameter/2);context.stroke();}}
+function updateParticles(){var width=window.innerWidth;var height=window.innerHeight;var particle;waveAngle+=0.01;for(var i=0;i<particles.length;i++){particle=particles[i];if(!streamingConfetti&&particle.y<-15)
+particle.y=height+100;else{particle.tiltAngle+=particle.tiltAngleIncrement;particle.x+=Math.sin(waveAngle);particle.y+=(Math.cos(waveAngle)+particle.diameter+particleSpeed)*0.5;particle.tilt=Math.sin(particle.tiltAngle)*15;}
+if(particle.x>width+20||particle.x<-20||particle.y>height){if(streamingConfetti&&particles.length<=maxParticleCount)
+resetParticle(particle,width,height);else{particles.splice(i,1);i--;}}}}})();
 </script>
 </body>
 
